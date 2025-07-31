@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loan Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="welcome-overlay">
+  <div class="welcome-text">Welcome to our Calculator App</div>
+</div>
+
+<nav class="navbar">
+  <div class="logo">LoanGenie</div>
+</nav>
+
+<div class="background">
+  <div class="floating-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+    <div class="shape shape5"></div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="heading">Loan EMI Calculator</h1>
+  <div class="calculator">
+    <div class="inputs">
+      <label>Loan Amount</label>
+      <input type="range" min="10000" max="1000000" step="1000" class="loan-amount-slider" />
+      <div class="value-label">₹ <span class="loan-amount-value">10000</span></div>
+
+      <label>Annual Interest Rate (%)</label>
+      <input type="range" min="1" max="20" step="0.1" class="interest-rate-slider" />
+      <div class="value-label"><span class="interest-rate-value">10</span>%</div>
+
+      <label>Loan Tenure (in months)</label>
+      <input type="range" min="5" max="240" step="5" class="loan-tenure-slider" />
+      <div class="value-label"><span class="loan-tenure-value">60</span> months</div>
+
+      <div class="button-group">
+        <button class="calculate-btn">Calculate</button>
+        <button class="cancel-btn" onclick="resetInputs()">Cancel</button>
+      </div>
+    </div>
+
+    <div class="results">
+      <div class="chart-controls">
+        <label for="chartType">Select Chart Type:</label>
+        <select id="chartType">
+          <option value="doughnut">Pie Chart</option>
+          <option value="bar">Bar Chart</option>
+          <option value="line">Line Chart</option>
+        </select>
+      </div>
+      <canvas id="myChart"></canvas>
+
+      <div class="output">
+        <p>EMI: ₹<span class="emi-output">0</span></p>
+        <p>Total Interest: ₹<span class="interest-output">0</span></p>
+        <p>Total Amount: ₹<span class="total-output">0</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
